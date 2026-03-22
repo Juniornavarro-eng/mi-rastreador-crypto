@@ -11,6 +11,9 @@ if st.button("Calcular Valor"):
     respuesta = requests.get(url)
     datos = respuesta.json()
     
+    # Esta línea nueva te mostrará en pantalla qué dice la API de verdad
+    st.write("Datos brutos de la API:", datos)
+    
     if moneda in datos:
         precio_limpio = datos[moneda]['eur']
         valor_total = cantidad * precio_limpio
